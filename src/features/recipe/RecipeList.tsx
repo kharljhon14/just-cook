@@ -1,4 +1,4 @@
-import Recipe from '@/components/Recipe';
+import Recipe from '@/features/recipe/Recipe';
 import { RecipeType } from '@/types/recipe';
 import useSWR from 'swr';
 
@@ -8,7 +8,7 @@ export default function RecipeList() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Failed to load</div>;
   return (
-    <div className="space-y-6 m-3">
+    <div className="space-y-8 m-4">
       {data?.map((recipe) => (
         <Recipe
           key={recipe.uuid}

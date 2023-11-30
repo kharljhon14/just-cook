@@ -9,6 +9,14 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      circle: 'circle',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+    },
     extend: {
       colors: {
         brown: {
@@ -21,6 +29,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 };
 export default config;

@@ -4,7 +4,7 @@ import RecipeSection from '@/features/recipe/RecipeSection';
 
 export default function Home() {
   return (
-    <main>
+    <main className=" scrollbar-thin">
       <HeroSection />
       <MainNavigation />
       <RecipeSection />

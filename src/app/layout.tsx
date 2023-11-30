@@ -15,7 +15,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body
+        className={`${lato.className} scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 overflow-x-hidden`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

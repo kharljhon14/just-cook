@@ -1,9 +1,18 @@
 import Modal from '@/components/Modal';
+import useModal from '@/hooks/useModal';
 import Image from 'next/image';
 
-export default function RecipeModal() {
+interface Props {
+  open: boolean;
+  handleClose: () => void;
+}
+
+export default function RecipeModal({ open, handleClose }: Props) {
   return (
-    <Modal>
+    <Modal
+      open={open}
+      handleClose={handleClose}
+    >
       <div className="flex flex-col space-y-4 text-brown-400">
         <Image
           width={400}

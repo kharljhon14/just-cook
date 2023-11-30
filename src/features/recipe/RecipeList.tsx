@@ -2,7 +2,11 @@ import Recipe from '@/features/recipe/Recipe';
 import { RecipeType } from '@/types/recipe';
 import useSWR from 'swr';
 
-export default function RecipeList() {
+interface Props {
+  handleOpen: () => void;
+}
+
+export default function RecipeList({ handleOpen }: Props) {
   const { data, isLoading, error } = useSWR<RecipeType[]>('http://localhost:3001/recipes');
 
   if (isLoading) return <div>Loading...</div>;
@@ -13,6 +17,7 @@ export default function RecipeList() {
         <Recipe
           key={recipe.uuid}
           recipe={recipe}
+          handleOpen={handleOpen}
         />
       ))}
     </div>

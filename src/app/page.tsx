@@ -1,13 +1,11 @@
-import HeroImage from '@/components/HeroImage';
-import Image from 'next/image';
+import HeroSection from '@/features/HeroSection';
+import MainNavigation from '@/features/MainNavigation';
 
 export default function Home() {
   return (
     <main>
-      <HeroImage
-        src="/img/banner.png"
-        alt="Just Cook hero image"
-      />
+      <HeroSection />
+      <MainNavigation />
     </main>
   );
 }

@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -7,7 +8,19 @@ const config: Config = {
     './src/features/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        brown: {
+          400: '#423736',
+        },
+      },
+      transitionProperty: {
+        height: 'height',
+        ...defaultTheme.transitionProperty,
+      },
+    },
+  },
   plugins: [],
 };
 export default config;

@@ -10,7 +10,7 @@ export interface Direction {
   optional?: boolean;
 }
 
-export interface Recipe {
+export interface RecipeType {
   uuid: string;
   title: string;
   description: string;

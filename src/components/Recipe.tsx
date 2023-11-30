@@ -1,4 +1,4 @@
-import { Recipe as RecipeType } from '@/types/recipe';
+import { RecipeType } from '@/types/recipe';
 import Image from 'next/image';
 
 interface Props {

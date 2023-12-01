@@ -17,4 +17,4 @@ Additionally, to view the recipes, you'll need to run the server on localhost:30
    - `npm i`
 4. Start the API server:
    - `npm run start:api`
-Open [http://localhost:3001](http://localhost:3001) to view the recipes.
+Open [http://localhost:3001](http://localhost:3001/recipes) to view the recipes.

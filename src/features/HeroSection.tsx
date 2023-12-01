@@ -1,4 +1,4 @@
-import HeroImage from '@/components/HeroImage';
+import HeroImage from '@/features/HeroImage';
 
 export default function HeroSection() {
   return (

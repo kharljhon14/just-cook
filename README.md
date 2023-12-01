@@ -1,5 +1,6 @@
 To run the development server, use one of the following commands:
- 1.Install dependencies:
+
+ 1. Install dependencies:
  - `npm i`
  - `pnpm i`
 

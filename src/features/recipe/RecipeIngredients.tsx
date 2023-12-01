@@ -14,9 +14,7 @@ interface Props {
 }
 
 export default function RecipeIngredients({ recipe }: Props) {
-  const { data, isLoading, error } = useSWR<SpecialType[]>('http://localhost:3001/specials');
-
-  const [specialText, setSpecialText] = useState<string>();
+  const { data } = useSWR<SpecialType[]>('http://localhost:3001/specials');
 
   const [ingredientsWithSpecial, setIngredientsWithSpecial] = useState<IngredientWithSpecial[]>([]);
 
@@ -45,9 +43,9 @@ export default function RecipeIngredients({ recipe }: Props) {
   }, [data, recipe]);
 
   return (
-    <div>
+    <div className="space-y-4">
       <h2 className="font-bold text-lg uppercase">Ingredients:</h2>
-      <ul className=" list-outside list-disc px-4 space-y-1">
+      <ul className=" list-outside list-disc px-4 space-y-2">
         {ingredientsWithSpecial.map((ingredient) => (
           <li key={ingredient.uuid}>
             <span className=" capitalize">{ingredient.ingredientName}</span>

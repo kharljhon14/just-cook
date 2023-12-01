@@ -1,7 +1,6 @@
 import { RecipeType } from '@/types/recipe';
 import Image from 'next/image';
 import Button from '../../components/Button';
-import { useEffect } from 'react';
 
 interface Props {
   recipe: RecipeType;
@@ -28,8 +27,28 @@ export default function Recipe({
           width={800}
           height={200}
           src={recipe.images.medium}
+          style={{
+            width: '800px',
+            height: '300px',
+            objectFit: 'cover',
+          }}
           alt="recipe"
-          className={`${contentPosition === 'left' ? 'order-2' : 'order-1'}`}
+          className={`${contentPosition === 'left' ? 'order-2' : 'order-1'} md:hidden lg:block`}
+        />
+
+        <Image
+          width={1000}
+          height={200}
+          src={recipe.images.full}
+          alt="recipe"
+          style={{
+            width: '1000px',
+            height: '400px',
+            objectFit: 'cover',
+          }}
+          className={`${
+            contentPosition === 'left' ? 'order-2' : 'order-1'
+          } hidden md:block lg:hidden`}
         />
         <div
           className={`flex flex-col justify-between lg:w-full space-y-6 ${

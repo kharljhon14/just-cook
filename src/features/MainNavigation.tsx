@@ -1,15 +1,37 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { IoMenu, IoCloseSharp } from 'react-icons/io5';
 
 export default function MainNavigation() {
   const [active, setActive] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 10) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="bg-brown-400 lg:py-3 py-2 text-white uppercase flex flex-col overflow-hidden">
+    <nav
+      className={`${
+        isSticky ? 'sticky -top-1 bg-brown-400' : ''
+      } lg:py-3 py-2 text-white uppercase flex flex-col overflow-hidden`}
+    >
       <button
         onClick={() => setActive((prev) => !prev)}
         className={`self-end mr-2 text-4xl lg:hidden ${active ? 'mb-4' : 'mb-0'}`}

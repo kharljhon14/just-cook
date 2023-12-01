@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useEffect } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 
 interface Props extends PropsWithChildren {
@@ -13,7 +13,7 @@ export default function Modal({ children, open, handleClose }: Props) {
         open ? 'flex' : 'hidden'
       }`}
     >
-      <div className="bg-white lg:max-w-4xl w-full h-full p-4 rounded-md max-h-full overflow-y-scroll scrollbar-none">
+      <div className="bg-white lg:max-w-7xl w-full h-full lg:h-auto p-4 rounded-md max-h-full overflow-y-scroll scrollbar-none">
         <div className="flex flex-col">
           <button
             onClick={handleClose}
@@ -21,7 +21,9 @@ export default function Modal({ children, open, handleClose }: Props) {
           >
             <IoCloseSharp />
           </button>
-          <div>{children}</div>
+          <div className="scrollbar-thin overflow-y-auto scrollbar-thumb-gray-400/20 scrollbar-track-gray-100/30">
+            {children}
+          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,6 @@
 import Modal from '@/components/Modal';
 import { RecipeType } from '@/types/recipe';
-
 import Image from 'next/image';
-
 import useSWR from 'swr';
 import RecipeIngredients from './RecipeIngredients';
 
@@ -21,7 +19,7 @@ export default function RecipeModal({ recipeId, open, handleClose }: Props) {
       handleClose={handleClose}
     >
       {data && (
-        <div className="flex flex-col space-y-4 lg:space-y-8 text-brown-400 lg:h-[45rem] lg:mx-6 lg:mt-0 md:px-6 px-4 lg:px-2">
+        <div className="flex flex-col space-y-4 lg:space-y-8 text-brown-400 lg:h-[45rem] lg:mx-6 lg:mt-0 md:px-6 lg:px-2">
           <div className="space-y-4 lg:flex lg:space-y-0 lg:space-x-6">
             <Image
               width={800}

@@ -13,7 +13,10 @@ export default function RecipeList({ handleOpen, handleSetRecipe }: Props) {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Failed to load</div>;
   return (
-    <div className="space-y-8 m-4">
+    <div
+      id="recipe"
+      className="space-y-8 m-4"
+    >
       {data?.map((recipe) => (
         <Recipe
           handleSetRecipe={handleSetRecipe}

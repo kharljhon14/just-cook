@@ -21,11 +21,13 @@ export default function RecipeSection() {
         handleSetRecipe={handleSetRecipe}
         handleOpen={handleOpen}
       />
-      <RecipeModal
-        recipe={recipe}
-        open={open}
-        handleClose={handleClose}
-      />
+      {recipe && (
+        <RecipeModal
+          recipe={recipe}
+          open={open}
+          handleClose={handleClose}
+        />
+      )}
     </SWRConfig>
   );
 }

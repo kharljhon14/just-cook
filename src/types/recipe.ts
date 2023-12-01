@@ -27,3 +27,12 @@ export interface RecipeType {
   ingredients: Array<Ingredient>;
   directions: Array<Direction>;
 }
+
+export interface SpecialType {
+  uuid: string;
+  ingredientId: string;
+  type: string;
+  title: string;
+  geo: string;
+  text: string;
+}

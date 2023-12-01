@@ -1,13 +1,20 @@
 import { RecipeType } from '@/types/recipe';
 import Image from 'next/image';
 import Button from '../../components/Button';
+import { useEffect } from 'react';
 
 interface Props {
   recipe: RecipeType;
   handleOpen: () => void;
+  handleSetRecipe: (recipe: RecipeType) => void;
 }
 
-export default function Recipe({ recipe, handleOpen }: Props) {
+export default function Recipe({ recipe, handleOpen, handleSetRecipe }: Props) {
+  const handleViewRecipe = () => {
+    handleSetRecipe(recipe);
+    handleOpen();
+  };
+
   return (
     <div className="space-y-6">
       <div className="space-y-2  text-brown-400">
@@ -20,7 +27,7 @@ export default function Recipe({ recipe, handleOpen }: Props) {
         <h1 className="font-bold text-xl">{recipe.title}</h1>
         <p>{recipe.description}</p>
       </div>
-      <Button onClick={handleOpen}>View recipe</Button>
+      <Button onClick={handleViewRecipe}>View recipe</Button>
     </div>
   );
 }

@@ -4,9 +4,10 @@ import useSWR from 'swr';
 
 interface Props {
   handleOpen: () => void;
+  handleSetRecipe: (recipe: RecipeType) => void;
 }
 
-export default function RecipeList({ handleOpen }: Props) {
+export default function RecipeList({ handleOpen, handleSetRecipe }: Props) {
   const { data, isLoading, error } = useSWR<RecipeType[]>('http://localhost:3001/recipes');
 
   if (isLoading) return <div>Loading...</div>;
@@ -15,6 +16,7 @@ export default function RecipeList({ handleOpen }: Props) {
     <div className="space-y-8 m-4">
       {data?.map((recipe) => (
         <Recipe
+          handleSetRecipe={handleSetRecipe}
           key={recipe.uuid}
           recipe={recipe}
           handleOpen={handleOpen}

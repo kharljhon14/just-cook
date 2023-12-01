@@ -1,31 +1,20 @@
-# Project Name
+To run the development server, use one of the following commands:
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- `npm run dev`
+- `yarn dev`
+- `pnpm dev`
+- `bun dev`
 
-## Getting Started
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Additionally, to view the recipes, you'll need to run the server on localhost:3001. This project includes an API server (json-server) for you to use. Follow the steps below:
 
-Open http://localhost:3000 with your browser to see the result.
+1. Install dependencies:
+   - `pnpm i`
+   - `pnpm run dev`
+2. Start the API server:
+   Clone the repo [https://bitbucket.org/crescendocollective/frontend-api-skills-test/src/master/]
 
-
-Additionally, you'll need to run the server on localhost:3001 to view the recipes:
-https://bitbucket.org/crescendocollective/frontend-api-skills-test/src/master/
-This project includes a API server (json-server) for you to use. To install and run, use the commands below:
-
-npm i
-npm run start:api
-
-Open http://localhost:3001 to view the recipes.
-
-You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
-```
+Open [http://localhost:3001](http://localhost:3001) to view the recipes.

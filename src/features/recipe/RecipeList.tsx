@@ -4,7 +4,7 @@ import useSWR from 'swr';
 
 interface Props {
   handleOpen: () => void;
-  handleSetRecipe: (recipe: RecipeType) => void;
+  handleSetRecipe: (recipeId: string) => void;
 }
 
 export default function RecipeList({ handleOpen, handleSetRecipe }: Props) {

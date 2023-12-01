@@ -5,19 +5,18 @@ import fetcher from '@/utils/fetcher';
 import RecipeModal from './RecipeModal';
 import useModal from '@/hooks/useModal';
 import { useEffect, useState } from 'react';
-import { RecipeType } from '@/types/recipe';
 
 export default function RecipeSection() {
   const { open, handleClose, handleOpen } = useModal();
-  const [recipe, setRecipe] = useState<RecipeType>();
+  const [recipeId, setRecipeId] = useState<string>();
 
-  const handleSetRecipe = (selectedRecipe: RecipeType) => {
-    setRecipe(selectedRecipe);
+  const handleSetRecipe = (uuid: string) => {
+    setRecipeId(uuid);
   };
 
   const handleCloseModal = () => {
     handleClose();
-    setRecipe(undefined);
+    setRecipeId(undefined);
   };
 
   useEffect(() => {
@@ -32,9 +31,9 @@ export default function RecipeSection() {
         handleSetRecipe={handleSetRecipe}
         handleOpen={handleOpen}
       />
-      {recipe && (
+      {recipeId && (
         <RecipeModal
-          recipe={recipe}
+          recipeId={recipeId}
           open={open}
           handleClose={handleCloseModal}
         />

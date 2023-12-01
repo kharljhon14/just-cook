@@ -5,7 +5,7 @@ import Button from '../../components/Button';
 interface Props {
   recipe: RecipeType;
   handleOpen: () => void;
-  handleSetRecipe: (recipe: RecipeType) => void;
+  handleSetRecipe: (recipeId: string) => void;
   contentPosition: 'left' | 'right';
 }
 
@@ -16,7 +16,7 @@ export default function Recipe({
   contentPosition = 'right',
 }: Props) {
   const handleViewRecipe = () => {
-    handleSetRecipe(recipe);
+    handleSetRecipe(recipe.uuid);
     handleOpen();
   };
 

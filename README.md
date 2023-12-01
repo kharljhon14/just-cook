@@ -1,5 +1,9 @@
 To run the development server, use one of the following commands:
+ 1.Install dependencies:
+ - `npm i`
+ - `pnpm i`
 
+2. Start the server:
 - `npm run dev`
 - `yarn dev`
 - `pnpm dev`

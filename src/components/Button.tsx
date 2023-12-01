@@ -5,7 +5,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, PropsWithChildr
 export default function Button({ children, ...props }: Props) {
   return (
     <button
-      className="bg-brown-400 text-yellow-400 p-2 rounded-md text-sm"
+      className="bg-brown-400 text-yellow-400  rounded-md text-sm px-3 py-2"
       {...props}
     >
       {children}

@@ -15,10 +15,11 @@ export default function RecipeList({ handleOpen, handleSetRecipe }: Props) {
   return (
     <div
       id="recipe"
-      className="space-y-8 m-4"
+      className="space-y-8 m-4 lg:m-8 lg:space-y-12"
     >
-      {data?.map((recipe) => (
+      {data?.map((recipe, idx) => (
         <Recipe
+          contentPosition={idx % 2 ? 'left' : 'right'}
           handleSetRecipe={handleSetRecipe}
           key={recipe.uuid}
           recipe={recipe}
